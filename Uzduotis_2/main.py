@@ -30,8 +30,8 @@ users = [
 age_average=0
 def get_user_average_age(input_list):
   """
-  Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. Jį prašys perduoti 45 eilutėje , vietoj
-  31 eiluteje 'input_list'. For ciklo pagalba loopinsime per sąrašą, kuris bus sudarytas tik iš "age" Value (tai padės
+  Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. Jį prašys perduoti 45 eilutėje , p.s. 'input_list'
+  reiškia tik  kad fukcija laukia 1 kintamojo.. For ciklo pagalba loopinsime per sąrašą, kuris bus sudarytas tik iš "age" Value (tai padės
   atlikti sorted) ir kiekviena reikšmę (skaičių) pridėsime prie naujai sukurtos suma reikšmės. Patogumo dėliai sukuriame
   dar vieną kitnamąjį,age_average, kuris len pagalba grąžins vidurkį, o round suapvalins iki artimiausio sveiko skaičiaus.
   """
@@ -48,7 +48,7 @@ print(f"  - age_average rounded value is: {get_user_average_age(users)} \n  - da
 # # >>>>>>>>>>>>>>>>>Antros užduoties 2 dalis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def get_users_names(input_list):
   """
-  Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. Jį prašys perduoti 60 eilutėje , vietoj 49 eiluteje
+  Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. p.s. 'input_list' reiškia tik  kad fukcija laukia 1 kintamojo.
    'input_list'. Kad nekeisti vartotojo paduoto sąrašo sukuriame naują List kintamąjį 'list_of_names'. For ciklo pagalba
    eisime per sarašą, kurį mums išfiltruos tik su names value lambda funkcija, o sorted išrikiuos pagal abecelę. Kiekvienu žingsniu
    abeceles tvarka prie list_of_names pabaigos append pagalba bus pridedamas kiekviena name VALUE kaip stringas į listą .

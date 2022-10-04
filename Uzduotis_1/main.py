@@ -41,7 +41,7 @@ users2 = [
 # # >>>>>>>>>>>>>>>>>TRUMPAS būdas<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def filter_all_or_nothing_people(input_list):
     """
-    Funkcija prašys perduoti 52 eilutėje listą su žodynais, vietoj 42 eiluteje 'input_list'.
+    Funkcija prašys perduoti 52 eilutėje listą su žodynais, p.s. 'input_list' reiškia tik  kad fukcija laukia 1 kintamojo.
     Kad nekeisti vartotojo paduoto sąrašo sukuriame naują kintamąjį 'new_list',  lambda funkcijos pagalba
     išfiltruosime žodynus su filter pagal uzduoties sąlygas) ir paverčiame juos į list struktūrą. Galiausiai vartotojas perdavęs listą gaus reikiamą rezultatą.
     """
@@ -54,6 +54,9 @@ print(filter_all_or_nothing_people(users))
 
 # # 2 variantas - trumpiausias atsakymas
 def filter_underaged_owners(input_list):
+    """
+       Funkcijos aprašymas praktiškai identiškas aukčiau minėtoje užduotyje
+       """
     naujas=list(filter(lambda x:((x['hasDog']==True or x['hasCat'])==True) and x['age']<18,input_list))
     print("TRUMPAS būdas: pirmos užduoties 2 dalies atsakymas, gražinu listą vartotojų, kurie  nėra pilnamečiai ir turi bent vieną naminį gyvūną ")
     return naujas
