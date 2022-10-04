@@ -15,3 +15,29 @@
 # Metodas:
 # * was_expensive() - jeigu filmo "budget" yra daugiau nei 100 mln. USD,
 #   grąžins True, kitu atveju - False.
+class Movie:
+    def __init__(self, title, director, budget):
+        self.title = str(title)
+        self.director = str(director)
+        self.budget = int(budget)
+
+    def was_expensive(self):
+        if self.budget > 100000000:
+            return True
+        else:
+            return False
+
+    def __repr__(self):
+        return f"({self.title}, {self.director}, {self.budget})"
+
+
+movie_1 = Movie("Trys_paršeliai", "Jonas Jonaitis", 50000)
+movie_2 = Movie("Čarlis ir šokolado fabrikas", "Tim Burton", 150000000)
+movie_list = [movie_1, movie_2]
+print(movie_list)
+
+movie_dic = [movie_1.__dict__, movie_2.__dict__]
+print(movie_dic)
+
+print(movie_1.was_expensive())
+print(movie_2.was_expensive())
