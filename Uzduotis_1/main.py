@@ -25,29 +25,16 @@ users = [
     {'id': '9', 'name': 'Daniel Cane', 'age': 15, 'hasDog': False, 'hasCat': False},
 ]
 
-users2 = [
-    {'id': '1', 'name': 'John Smith', 'age': 17, 'hasDog': True, 'hasCat': True},
-    {'id': '2', 'name': 'Ann Smith', 'age': 24, 'hasDog': True, 'hasCat': True},
-    {'id': '3', 'name': 'Tom Jones', 'age': 63, 'hasDog': True, 'hasCat': True},
-    {'id': '4', 'name': 'Rose Peterson', 'age': 20, 'hasDog': True, 'hasCat': True},
-    {'id': '5', 'name': 'Alex John', 'age': 25, 'hasDog': False, 'hasCat': False},
-    {'id': '6', 'name': 'Ronald Jones', 'age': 31, 'hasDog': True, 'hasCat': True},
-    {'id': '7', 'name': 'Elton Smith', 'age': 16, 'hasDog': True, 'hasCat': True},
-    {'id': '8', 'name': 'Simon Peterson', 'age': 32, 'hasDog': False, 'hasCat': False},
-    {'id': '9', 'name': 'Daniel Cane', 'age': 15, 'hasDog': False, 'hasCat': False},
-]
 
-
-# # >>>>>>>>>>>>>>>>>TRUMPAS būdas<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+# # >>>>>>>>1 uždAVINYS>>>>>>>>>TRUMPAS būdas<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def filter_all_or_nothing_people(input_list):
     """
-    Funkcija prašys perduoti 53 eilutėje listą su žodynais, p.s. 'input_list' reiškia tik  kad funkcija laukia 1
-    kintamojo. Kad nekeisti vartotojo paduoto sąrašo sukuriame naują kintamąjį 'new_list1',  lambda funkcijos pagalba
-    išfiltruosime žodynu eilutes su filter(pagal užduoties sąlygas) ir su list paverčiame ju tipą. Galiausiai vartotojas
-    perdavęs listą gaus reikiamą rezultatą.
+    1. funkcija "filter_all_or_nothing_people" - kaip argumentą priims "users"
+    sąrašą ir duoto sąrašo atveju grąžins sąrašą vartotojų, kurie arba neturi
+    naminių gyvūnų visiškai, arba turi ir šunį, ir katę.
     """
     new_list1 = list(filter(lambda x: (x['hasDog'] == x['hasCat']) or (x['hasDog'] == x['hasCat']), input_list))
-    print("TRUMPAS būdas: pirmos užduoties 1 dalies atsakymas, gražinu listą vartotojų, kurie arba neturi naminių "
+    print("\nTRUMPAS būdas: pirmos užduoties 1 dalies atsakymas, gražinu listą vartotojų, kurie arba neturi naminių "
           "gyvūnų visiškai, arba turi ir šunį, ir katę: ")
     return new_list1
 
@@ -55,23 +42,42 @@ def filter_all_or_nothing_people(input_list):
 print(filter_all_or_nothing_people(users))
 
 
-# print(users)
-
-# # 2 variantas - trumpiausias atsakymas
+# # >>>>>>>>1 uždAVINYS>>>>>>>>>TRUMPAS būdas<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def filter_underaged_owners(input_list):
     """
-    Funkcijos aprašymas praktiškai identiškas aukčiau minėtoje užduotyje
+    2. funkcija "filter_underaged_owners" - kaip argumentą priims "users" sąrašą
+    ir duoto sąrašo atveju grąžins sąrašą vartotojų, kurie dar nėra pilnamečiai,
+    bet turi bent vieną naminį gyvūną.
     """
     new_list2 = list(filter(lambda x: ((x['hasDog'] == True or x['hasCat']) == True) and x['age'] < 18, input_list))
     print(
-        "TRUMPAS būdas: pirmos užduoties 2 dalies atsakymas, gražinu listą vartotojų, kurie  nėra pilnamečiai ir turi "
-        "bent vieną naminį gyvūną ")
+        "\nTRUMPAS būdas: pirmos užduoties 2 dalies atsakymas, gražinu listą vartotojų, kurie  nėra pilnamečiai ir turi "
+        "bent vieną naminį gyvūną: ")
     return new_list2
 
 
 print(filter_underaged_owners(users))
 
-#
+
+
+
+
+
+
+
+
+
+
+# papildomi skaičiavimai ir/arba komentarai"
+
+# TRINTI KOMENTARĄ, DĖSTYTOJA SAKĖ PERTEKLINIS
+"""
+Funkcija prašys perduoti 53 eilutėje listą su žodynais, p.s. 'input_list' reiškia tik  kad funkcija laukia 1
+kintamojo. Kad nekeisti vartotojo paduoto sąrašo sukuriame naują kintamąjį 'new_list1',  lambda funkcijos pagalba
+išfiltruosime žodynu eilutes su filter(pagal užduoties sąlygas) ir su list paverčiame ju tipą. Galiausiai vartotojas
+perdavęs listą gaus reikiamą rezultatą.
+"""
+
 # # >>>>>>ILGAS BŪDAS>>>>>>>>>> 1 užduotis  "filter_all_or_nothing_people" funkcija<<<<<<<<<<<< PRADŽIA<<<<<<<<<<<<
 # '''
 # PAAIŠKNIMAS:  nors ilgas sprendimo būdas ilgesnis, bet naudingas, kai yra daugiau užduočių ir filtrų.
@@ -80,7 +86,7 @@ print(filter_underaged_owners(users))
 # def filter_all_or_nothing_people_filtras(dic):
 #     '''
 #     sukuriama pirma funkcija kuri filtruoja sąrašą elementus, pagal užduoties sąlygas,
-#     kuris sudarytas iš žodynų. Negrąžina rezultato, nes filter_underaged_owners funkcijai reikės kito filtro
+#     kuris sudarytas iš žodynų. ji negrąžina rezultato, nes filter_underaged_owners funkcijai reikės kito filtro
 #     '''
 # #  ilgesnis return:
 #     # return (dic['hasDog'] == True and dic['hasCat'] == True) or (dic['hasDog'] == False and dic['hasCat'] == False)

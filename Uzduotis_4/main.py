@@ -24,14 +24,16 @@ class Movie:
     """sukuriame klasę Movie, kuri iš savęs duomenų nesaugo, o yra kaip instrukcija pagal kurią sukuriamas objektas 
     su savybėmis ir metodais. Movie klasė turi ne tik užduotyje minimas tris savybes, bet ir pati svarbiauia self 
     (pavadinimas gali būti kitoks, bet pagal susitarima naudojame self) savybę, ji reikalinga kiekviename metode, nes
-     kai jį iškviečiame reikia žinoti su kuriuo objekto atributu turetų atlikti operacija. Kiekvienai savybei nusakeme, 
-     koks duomenu tipas turi buti ivestas kuriant objekta, kitaip objektas nebus sukurtas. 
-     init metodas (konstruktorius) objekta kuriant ivykdomas automatiskai. todel mes jame priskiriame kad self.title, 
-     tai ka ives vartotojas ir bus title ir t.t.
+     kai jį automatiškai iškviečiame(kuriant objekta) reikia kodui žinoti su kuriuo objekto savybe/atributu turetų 
+     atlikti  operacija. Kiekvienai savybei nusakeme, koks duomenu tipas turi buti ivestas kuriant objekta, kitaip 
+     objektas nebus sukurtas. init metodas (konstruktorius) objekta kuriant ivykdomas automatiskai. todel mes pvz. jame 
+     priskiriame, kad self.title, tai ka ives vartotojas ir bus title ir t.t.
       """
 
     def was_expensive(self):
-        """ sukuriamas metodas su self savybe, galime naudoti paprasta if funkcija, arba dar paprasciau"""
+        """ sukuriamas metodas (būtinai su self savybe), galime naudoti paprasta if funkcija, arba dar paprasciau.
+        Šis metodas tikrins ar mūsų sukurtas objektas/-ai, kurie turi budget  savybe jo reikšmė didesnę nei 100 mln
+        """
 
         return self.budget > 100000000
 
@@ -45,17 +47,17 @@ class Movie:
 movie_1 = Movie("Trys_paršeliai", "Jonas Jonaitis", 50000)
 movie_2 = Movie("Čarlis ir šokolado fabrikas", "Tim Burton", 150000000)
 
-# galime objektų reikšmes ideti i lista, bet bus idetos tik tos savybes, kurios aprasytos __repr__(self)
+# galime objektų reikšmes ideti i lista, bet bus idetos tik tos savybes, kurios aprasytos __repr__(self) metode
 movie_list = [movie_1, movie_2]
 print(
-    f"1) Galime atspausdinti kintamaji movie_list (iš sukurtų objektų) kuriame matysime tik Values (konkrecias Values "
-    f"nusakeme 36 eiluteje su repr konkstruktorium ):\n {movie_list}\n")
+    f"\n1) Galime atspausdinti kintamaji movie_list (iš sukurtų objektų) kuriame matysime tik Values (konkrecias Values "
+    f"nusakeme su repr konkstruktorium ):\n {movie_list}\n")
 
 # #galime objektus sudeti kaip zodynus i lista,  __repr__(self) nebeturi itakos
 movie_dic = [movie_1.__dict__, movie_2.__dict__]
 print(f"2) Galime sukurtus objektus pridėti į listą, kaip pilnus objektus(žodynai) su keys ir values: \n{movie_dic}\n")
 
-# dar keli papildomi atsakymai, kurie parodo, kad galima neribotai programuoti:)
+# dar keli papildomi atsakymai, kurie praverčia
 print(
     f"3) Ar sukurtas objektas movie_1 kurio pavadinimas \"{movie_1.__dict__['title']}\" uždirbo daugiau nei 100mln? Atsakymas: {movie_1.was_expensive()}\n")
 print(
