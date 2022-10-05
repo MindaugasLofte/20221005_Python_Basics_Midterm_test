@@ -14,7 +14,7 @@ audi = {
 
 def get_dict_values(input_list):
   """ funkcija išaukia metodą .values(), kuris grąžina tik žodyno Values. O construktoriaus list() pagalbą values pateikia
-   kaip listą . P.s. input_list' reiškia tik  kad fukcija laukia 1 kintamojo.
+   kaip listą (pakeicia data type) . P.s. input_list' reiškia tik  kad fukcija laukia 1 kintamojo.
   """
   print("Trečios užduoties atsakymas, kuris Kaip argumentą priims žodyną ir grąžins sąrašą su visomis jo reikšmėmis (values): ")
   return list(input_list.values())

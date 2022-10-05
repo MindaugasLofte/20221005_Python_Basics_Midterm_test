@@ -1,5 +1,3 @@
-import pprint
-
 # Duotas "users" sąrašas.
 
 # Parašykite dvi funkcijas, kurios:
@@ -16,47 +14,60 @@ import pprint
 # pvz. ['Alex John', 'Ann Smith', ...].
 
 users = [
-  { 'id': '1', 'name': 'John Smith', 'age': 20 },
-  { 'id': '2', 'name': 'Ann Smith', 'age': 24 },
-  { 'id': '3', 'name': 'Tom Jones', 'age': 31 },
-  { 'id': '4', 'name': 'Rose Peterson', 'age': 17 },
-  { 'id': '5', 'name': 'Alex John', 'age': 25 },
-  { 'id': '6', 'name': 'Ronald Jones', 'age': 63 },
-  { 'id': '7', 'name': 'Elton Smith', 'age': 16 },
-  { 'id': '8', 'name': 'Simon Peterson', 'age': 30 },
-  { 'id': '9', 'name': 'Daniel Cane', 'age': 51 },
+    {'id': '1', 'name': 'John Smith', 'age': 20},
+    {'id': '2', 'name': 'Ann Smith', 'age': 24},
+    {'id': '3', 'name': 'Tom Jones', 'age': 31},
+    {'id': '4', 'name': 'Rose Peterson', 'age': 17},
+    {'id': '5', 'name': 'Alex John', 'age': 25},
+    {'id': '6', 'name': 'Ronald Jones', 'age': 63},
+    {'id': '7', 'name': 'Elton Smith', 'age': 16},
+    {'id': '8', 'name': 'Simon Peterson', 'age': 30},
+    {'id': '9', 'name': 'Daniel Cane', 'age': 51},
 ]
+
+
 # # >>>>>>>>>>>>>>>>>Antros užduoties 1 dalis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-age_average=0
+
 def get_user_average_age(input_list):
+    """
+  Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. Jį prašys perduoti 52 eilutėje , p.s. 'input_list'
+  reiškia tik  kad fukcija laukia 1 kintamojo. For ciklo pagalba loopinsime per sąrašą, kuris bus sudarytas tik iš "age" Value (tai padės
+  atlikti sorted) ir kiekviena reikšmę (age value) sumuosime prie naujai sukurtos suma kintomojo reikšmės. Patogumo dėliai sukuriame
+  dar vieną kitnamąjį,age_average, jį padalinus iš len (len gražina saraso ilgi) pagalba gausime vidurkį, o round
+  suapvalins iki artimiausio sveiko skaičiaus.
+  P.s. kintamajam global suteike savybe  būti pasiektam už funkcijos ribų.
   """
-  Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. Jį prašys perduoti 45 eilutėje , p.s. 'input_list'
-  reiškia tik  kad fukcija laukia 1 kintamojo.. For ciklo pagalba loopinsime per sąrašą, kuris bus sudarytas tik iš "age" Value (tai padės
-  atlikti sorted) ir kiekviena reikšmę (skaičių) pridėsime prie naujai sukurtos suma reikšmės. Patogumo dėliai sukuriame
-  dar vieną kitnamąjį,age_average, kuris len pagalba grąžins vidurkį, o round suapvalins iki artimiausio sveiko skaičiaus.
-  """
-  suma=0
-  for user in (sorted(users, key=lambda i: i['age'])):
-    suma+=user["age"]
-  age_average = round((suma)/len(users))
-  print(
-    "Antros užduoties 1 dalies atsakymas, grąžins visų vartotojų amžiaus vidurkį kaip skaičių,suapvalintą iki artimiausio sveikojo skaičiaus: ")
-  return age_average
-print(f"  - age_average rounded value is: {get_user_average_age(users)} \n  - data type is: {type(age_average)}")
+    suma = 0
+    for user in (sorted(users, key=lambda i: i['age'])):
+        suma += user["age"]
+    global age_average
+    age_average = round(suma / len(users))
+    print(
+        "Antros užduoties 1 dalies atsakymas, grąžins visų vartotojų amžiaus vidurkį kaip skaičių,suapvalintą iki "
+        "artimiausio sveikojo skaičiaus: ")
+    return age_average
+
+
+print(
+    f"  - age_average rounded value is: {get_user_average_age(users)} "
+    f"\n  - data type is: {type(age_average)}")
 
 
 # # >>>>>>>>>>>>>>>>>Antros užduoties 2 dalis<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 def get_users_names(input_list):
-  """
-  Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. p.s. 'input_list' reiškia tik  kad fukcija laukia 1 kintamojo.
-   'input_list'. Kad nekeisti vartotojo paduoto sąrašo sukuriame naują List kintamąjį 'list_of_names'. For ciklo pagalba
-   eisime per sarašą, kurį mums išfiltruos tik su names value lambda funkcija, o sorted išrikiuos pagal abecelę. Kiekvienu žingsniu
-   abeceles tvarka prie list_of_names pabaigos append pagalba bus pridedamas kiekviena name VALUE kaip stringas į listą .
-  """
-  list_of_names=[]
-  for user in (sorted(users, key=lambda i: i['name'])):
-    list_of_names.append(user["name"])
-  print("Antros užduoties 2 dalies atsakymas, kuris grąžins sąrašą su visų vartotojų vardais, išrikiuotais abėcėlės tvarka: ")
-  return  list_of_names
-print(get_users_names(users))
+    """
+    Funkcija kuri lauks perduodamo vieno argumento, t.y. listo su žodynais. p.s. 'input_list' reiškia tik  kad fukcija laukia 1 kintamojo.
+    Kad nekeisti vartotojo paduoto sąrašo sukuriame naują List kintamąjį 'list_of_names'. For ciklo pagalba
+    eisime per sarašą, kurį mums išfiltruos tik su names value lambda funkcija, o sorted išrikiuos pagal abecelę. Kiekvienu žingsniu
+    abeceles tvarka prie list_of_names pabaigos append metodo pagalba bus pridedamas kiekviena name VALUE  į listą .
+    """
+    list_of_names = []
+    for user in (sorted(users, key=lambda i: i['name'])):
+        list_of_names.append(user["name"])
+    print(
+        "Antros užduoties 2 dalies atsakymas, kuris grąžins sąrašą su visų vartotojų vardais, "
+        "išrikiuotais abėcėlės tvarka: ")
+    return list_of_names
 
+
+print(get_users_names(users))
