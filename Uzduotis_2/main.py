@@ -35,15 +35,17 @@ def get_user_average_age(input_list):
     suapvalintą iki artimiausio sveikojo skaičiaus.
   """
     suma = 0
-    for user in (sorted(users, key=lambda i: i['age'])):
-        suma += user["age"]
     global age_average
+    i=0
+    while i<len(users):
+        suma+=(users[i]["age"])   
+        i+=1
     age_average = round(suma / len(users))
     print(
         "\nAntros užduoties 1 dalies atsakymas, grąžins visų vartotojų amžiaus vidurkį kaip skaičių, suapvalintą iki "
         "artimiausio sveikojo skaičiaus: ")
     return age_average
-
+print(get_user_average_age(users))
 
 print(
     f"  - suapvalinta vidurkio reikšmė iki sveiko skaičiaus yra: {get_user_average_age(users)} "
@@ -58,16 +60,18 @@ def get_users_names(input_list):
     pvz. ['Alex John', 'Ann Smith', ...].
     """
     list_of_names = []
-    for user in (sorted(users, key=lambda i: i['name'])):
-        list_of_names.append(user["name"])
+    i=0
+    while i<len(users):
+        # print(users[i]["name"])
+        list_of_names.append(users[i]["name"])   
+        i+=1
+    list_of_names.sort()  
     print(
         "\nAntros užduoties 2 dalies atsakymas, kuris grąžins sąrašą su visų vartotojų vardais, "
         "išrikiuotais abėcėlės tvarka: ")
     return list_of_names
 
-
 print(get_users_names(users))
-
 
 
 
