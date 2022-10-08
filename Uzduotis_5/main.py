@@ -1,3 +1,9 @@
+import modules.num.ints as integers
+from modules.mathematics.addition import add
+from modules.mathematics.division import divide
+from modules.mathematics.subtraction import subtract
+from modules.mathematics.multiplication import multiply
+
 # Importuokite reikiamus modulius, kad veiktų žemiau nurodytos funkcijos:
 
 # Kitų failų ir žemiau esančio kodo nekeiskite
